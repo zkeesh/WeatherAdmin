@@ -1,5 +1,5 @@
 var WeatherAdmin = require("./WeatherAdmin");
-var UserSearch = require("./UserSearch.js");
+var UserSearch = require("./UserSearch");
 
 // Hold the value whether someone is an "admin" or "user"
 var loginType = process.argv[2];
@@ -23,7 +23,8 @@ if (loginType === "admin") {
 else {
 
 	var zachSearch = new UserSearch(userName, userLocation);
-	console.log(zachSearch);
+	// console.log(zachSearch);
+	zachSearch.getWeather();
 
 	// zachSearch.newUserSearch(userName, userLocation);
 
