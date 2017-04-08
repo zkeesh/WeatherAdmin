@@ -1,5 +1,7 @@
 var weather = require('weather-js');
 
+var arrayOfLocations = [];
+
 function UserSearch(userName, userLocation) {
 	this.userName = userName;
 	this.userLocation = userLocation;
@@ -8,7 +10,12 @@ function UserSearch(userName, userLocation) {
 		weather.find({search: userLocation, degreeType: 'F'}, function(err, result) {
 		  if(err) console.log(err);
 		 
-		  console.log(JSON.stringify(result, null, 2));
+		  // console.log(JSON.stringify(result, null, 2));
+		  var cityName = result[0].location.name
+		  // console.log(result[0].location.name);
+		  arrayOfLocations.push(cityName);
+
+
 		});
 	}
 }
